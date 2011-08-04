@@ -32,6 +32,7 @@ function main() {
     var $timezones = $('[target*="calendar"]');
     $timezones.click(function(event) {
         var linkSrc = $(this).attr('href')
+            linkSrc = linkSrc.replace(/mode=[A-Z]+/, 'mode=WEEK');
         localStorage.setItem("5by5.timezone", linkSrc);
         updateCalendar();
         return false;
